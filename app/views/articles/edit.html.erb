@@ -1,4 +1,4 @@
-<h3>New article</h3>
+<h3>Edit article #<%= @article.id %></h3>
 
 <% if @article && @article.errors.any? %>
 
@@ -12,7 +12,7 @@
 
 <% end %>
 
-<%= form_for :article, url: articles_path do |f| %>
+<%= form_for :article, url: '/articles/' + @article.id.to_s, method: "patch" do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -24,7 +24,7 @@
   </p>
 
   <p>
-    <%= f.submit 'Send article' %>
+    <%= f.submit 'Update article' %>
   </p>
 
 <% end %>
