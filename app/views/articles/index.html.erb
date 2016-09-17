@@ -2,8 +2,8 @@
 
 <% @show_all.each do |single| %>
 
-  <h4><%= single.title %></h4>
+  <h4><%= single.title %><span> | <%= link_to 'edit', articles_path + '/' + single.id.to_s + '/edit' %></span></h4>
   <%= single.text %>
-  <br><hr>
+  <br><br><hr>
 
 <% end %>
