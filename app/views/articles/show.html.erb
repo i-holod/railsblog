@@ -1,4 +1,4 @@
-<h3>Article #<%= @article.id %></h3>
+<h3><%= link_to 'Articles', articles_path %> #<%= @article.id %></h3>
 
 <h4><%= @article.title %></h4>
 <%= @article.text %>
