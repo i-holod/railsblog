@@ -12,7 +12,7 @@
 
 <% end %>
 
-<%= form_for :article, url: articles_path + '/' + @article.id.to_s, method: "patch" do |f| %>
+<%= form_for :article, url: article_path, method: :patch do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
