@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.valid?
       @article.save
+      render action: 'show'
     else
       render action: 'new'
     end
@@ -29,6 +30,7 @@ class ArticlesController < ApplicationController
     @article.update(article_params)
     if @article.valid?
       @article.save
+      render action: 'show'
     else
       render action: 'update'
     end
