@@ -1,5 +1,17 @@
 <h3>Contact us</h3>
 
+<% if @contact && @contact.errors.any? %>
+
+  <p>
+    <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end  %>
+    </ul>
+  </p>
+
+<% end %>
+
 <%= form_for :contact, url: contacts_path do |f| %>
   <p>
     <%= f.label :email %><br>
