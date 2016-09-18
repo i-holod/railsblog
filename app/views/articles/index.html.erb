@@ -2,7 +2,14 @@
 
 <% @show_all.each do |x| %>
 
-  <h4><%= link_to x.title, article_path(x) %><span> | <%= link_to 'edit', edit_article_path(x) %></span></h4>
+  <h4>
+    <%= link_to x.title, article_path(x) %>
+    <span> | 
+      <%= link_to 'edit', edit_article_path(x) %> | 
+      <%= link_to 'delete', article_path(x), method: :delete, data: {confirm: 'Delete article?'} %>
+    </span>
+  </h4>
+
   <%= x.text %>
   <br><br><hr>
 
