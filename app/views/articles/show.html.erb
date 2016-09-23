@@ -10,12 +10,13 @@
 <% @article.comments.each do |comment| %>
 
   <%= comment.body %><br>
-  Написал <%= comment.author %>, <%= comment.created_at %><br><br>
+  <i>said <%= comment.author.mb_chars.downcase! %>, 
+  <span style="font-size: 11px;"><%= comment.created_at.strftime("%d %B %Y") %> in <%= comment.created_at.strftime("%H:%M:%S") %></span></i><br><br>
 
 <% end %>
 
 <hr>
-
+<h4>Add comment:</h4>
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
     <%= f.label :author %><br>
